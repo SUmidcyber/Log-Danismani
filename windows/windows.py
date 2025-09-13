@@ -111,17 +111,16 @@ class WindowsLog:
             print(f"❌ {log_name} okunamadı: {e}")
             return []
 
-    # windows/windows.py - save_logs_to_file fonksiyonunu güncelle
     def save_logs_to_file(self, events, filename):
         """Event'leri dosyaya kaydet"""
         if not events:
             print(f"⚠️ {filename} için kaydedilecek event yok!")
             return
         
-        filepath = os.path.join(self.log_folder, filename)  # ✅ log_folder VAR!
+        filepath = os.path.join(self.log_folder, filename)  
         try:
             with open(filepath, 'w', encoding='utf-8') as f:
-                for event in events[:100]:  # İlk 100 event
+                for event in events[:100]:  # İlk 100 event *** artira bilirsin
                     f.write(f"Event ID: {event.EventID}\n")
                     f.write(f"Time: {event.TimeGenerated}\n")
                     f.write(f"Source: {event.SourceName}\n")
@@ -133,21 +132,20 @@ class WindowsLog:
         except Exception as e:
             print(f"❌ Dosya yazma hatası: {e}")
 
-    # windows/windows.py - en alta bu fonksiyonu ekle
     def get_logs_as_text(self, events):
         """Event listesini text formatına çevir"""
         if not events:
             return ""
         
         log_text = ""
-        for i, event in enumerate(events[:100]):  # İlk 100 event
+        for i, event in enumerate(events[:100]):  # İlk 100 event *** artira bilirsin
             try:
                 log_text += f"=== EVENT {i+1} ===\n"
                 log_text += f"Event ID: {event.EventID}\n"
                 log_text += f"Time: {event.TimeGenerated}\n"
                 log_text += f"Source: {event.SourceName}\n"
                 
-                # StringInserts None olabilir, kontrol et
+                # StringInserts None olabilir, kontrol edilir
                 if event.StringInserts:
                     message = " ".join(str(item) for item in event.StringInserts if item)
                     log_text += f"Message: {message}\n"

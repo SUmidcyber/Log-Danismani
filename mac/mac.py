@@ -1,4 +1,3 @@
-# mac/mac.py
 import os
 import subprocess
 import platform
@@ -8,7 +7,6 @@ class MacLog:
     def __init__(self):
         self.sistem = SystemQuery()
         
-        # Sadece macOS'ta çalışsın
         if platform.system().lower() != "darwin":
             print("⚠️ Bu modül sadece macOS'ta çalışır!")
             return
@@ -17,7 +15,7 @@ class MacLog:
         print(f"💻 Mac: {self.sistem.ps_name}")
         print(f"👤 Kullanıcı: {self.sistem.user}")
         
-        # macOS log dosyaları
+        # macOS log dosyaları ** ekleye bilirsiniz
         self.log_files = {
             "system": "/var/log/system.log",
             "apache": "/var/log/apache2/error_log",
@@ -26,7 +24,6 @@ class MacLog:
             "console": "~/Library/Logs/Console.log"
         }
         
-        # Console uygulaması logları
         self.console_logs = [
             "~/Library/Logs/DiagnosticReports/",
             "~/Library/Logs/Adobe/",
@@ -40,7 +37,7 @@ class MacLog:
     def read_log_file(self, name, path):
         """Log dosyasını oku ve kaydet"""
         try:
-            # ~ işaretini genişlet
+            # ~ işaretini genişletir
             if path.startswith('~'):
                 path = os.path.expanduser(path)
             
@@ -76,9 +73,8 @@ class MacLog:
         """macOS Unified Logging System loglarını oku"""
         print("\n🔍 Unified Logs Okunuyor...")
         
-        # log show komutu ile sistem loglarını al
         try:
-            # Son 1 saatlik loglar
+            # Son 1 saatlik loglar ** lograin saatlik islemlerini artira bilirsin
             command = [
                 'log', 'show',
                 '--predicate', 'eventMessage contains "error"',
@@ -107,19 +103,15 @@ class MacLog:
         """Tüm macOS loglarını oku"""
         print("🍎 macOS Logları Toplanıyor...\n")
         
-        # Temel sistem logları
         for name, path in self.log_files.items():
             self.read_log_file(name, path)
         
-        # Console logları
         self.read_console_logs()
         
-        # Unified logs
         self.read_unified_logs()
         
         print(f"\n🎉 macOS log toplama tamamlandı! → {self.output_dir}/")
 
-# Sadece macOS'ta çalıştır
 if __name__ == "__main__" and platform.system().lower() == "darwin":
     logger = MacLog()
     logger.read_all_logs()

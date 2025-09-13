@@ -1,4 +1,3 @@
-# ai/ai.py
 import re
 import json
 import os
@@ -108,7 +107,7 @@ class LogAI:
         """
         print("🧠 AI Log Analizi Başlıyor...\n")
         
-        # Eğer log_files verilmediyse, klasörlerden topla
+        # Eğer log_files verilmediyse, klasörlerden toplar
         if log_files is None:
             log_files = self.collect_logs_from_directories()
         
@@ -150,7 +149,7 @@ class LogAI:
                 if 'warning' in line_lower:
                     self.stats['warnings'] += 1
                 
-                # IP adreslerini bul
+                # IP adreslerini bulma ** isletim sistemin
                 ips = self._extract_ips(line)
                 self.stats['unique_ips'].update(ips)
                 
@@ -178,11 +177,11 @@ class LogAI:
                         'severity': 'medium'
                     })
                 
-                # SSH başarısız girişler
+                # SSH başarısız girişleri
                 if 'failed password' in line_lower and 'ssh' in line_lower:
                     self._analyze_ssh_attack(line, line_num, file_path)
                 
-                # Port tarama şüphesi
+                # Port tarama şüphesinin analizi
                 if any(term in line_lower for term in ['port', 'scan', 'nmap', 'connection refused']):
                     self._analyze_port_scan(line, line_num, file_path)
                 
@@ -372,14 +371,10 @@ class LogAI:
             print(f"❌ Rapor kaydedilemedi: {e}")
             return False
 
-# Kullanım örneği
 if __name__ == "__main__":
-    # AI analizini başlat
     ai = LogAI()
     
-    # Otomatik olarak log klasörlerini tara ve analiz et
     report = ai.analyze_logs()
     
-    # Raporu göster ve kaydet
     ai.print_report(report)
     ai.save_report(report)

@@ -1,4 +1,3 @@
-# linux/linux.py
 import os
 import platform
 from SystemQuery.system_query import SystemQuery
@@ -14,7 +13,7 @@ class LinuxLog:
         
         print("🐧 Linux Log Okuyucu Hazır!")
         
-        # Log dosyaları
+        # Log dosyalarım ** ekleme yapa bilirsin
         self.log_files = {
             "syslog": "/var/log/syslog",
             "auth": "/var/log/auth.log",
@@ -26,7 +25,7 @@ class LinuxLog:
 
     def read_and_save_logs(self, name, path):
         """Log dosyasını oku ve kaydet"""
-        # Windows'ta çalışıyorsa atla
+        # Windows'ta çalışıyorsa atlar
         if platform.system().lower() != "linux":
             print(f"⚠️ {name} logları sadece Linux'ta okunabilir!")
             return
@@ -48,8 +47,8 @@ class LinuxLog:
         except Exception as e:
             print(f"❌ {name} okuma hatası: {e}")
 
-# Sadece Linux'ta çalıştır
 if __name__ == "__main__" and platform.system().lower() == "linux":
     logger = LinuxLog()
     for name, path in logger.log_files.items():
         logger.read_and_save_logs(name, path)
+
