@@ -1,4 +1,12 @@
 # Log Danışmanı - AI Destekli Log Analiz ve Güvenlik Aracı
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/851d0bae-a523-4f2b-aeb8-db0e065663d2" width="700" alt="Ekran Görüntüsü">
+</div>
+
+
+<p></p>
+
 <p align="center"> <img src="https://img.shields.io/badge/Python-3.8%2B-blue"> <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey"> <img src="https://img.shields.io/badge/AI-Powered-green"> <img src="https://img.shields.io/badge/License-MIT-yellow"> <img src="https://img.shields.io/badge/Status-Aktif%20Geliştirme-brightgreen"> <img src="https://img.shields.io/badge/Katkılar-Açık-orange"> </p><p align="center"> <b>Akıllı Log Analizi için Yapay Zeka Destekli Çözüm</b> </p><p align="center"> <a href="#-özellikler">Özellikler</a> • <a href="#-kurulum">Kurulum</a> • <a href="#-kullanım">Kullanım</a> • <a href="#-katkıda-bulunma">Katkıda Bulunma</a> • <a href="#-lisans">Lisans</a> </p>
 
 # 🚀Proje Hakkında
