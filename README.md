@@ -153,10 +153,10 @@ Linux için yeni log dosyaları eklemek:
     Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için LICENSE dosyasına bakın.
 
 # 👨‍💻 Geliştirici
-    Ümit Mammadov
+    Umid Mammadov
     
     Website: sibermerkez.com
     
-    LinkedIn: Ümit Mammadov
+    LinkedIn: Umid Mammadov
     
-    GitHub: @umidmammadov
+    GitHub: @SUmidcyber 
