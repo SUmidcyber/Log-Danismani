@@ -48,6 +48,10 @@ Geliştiriciler, sistem yöneticileri ve siber güvenlik uzmanları için tasarl
     Gerçek zamanlı analiz
     
     Modüler yapı
+# 👨‍💻 Teknolojik Altyapı
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/10625a6f-cefa-4a5e-bc76-def7b6ea8a7e" width="550" alt="Ekran Görüntüsü">
+</div>
 
 # 📦 Kurulum
     Gereksinimler
